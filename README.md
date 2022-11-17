@@ -2,7 +2,7 @@
 
 Demo
 
-### https://ahmed-elzaky.github.io/Tepmlate-Three/
+### https://ahmed-elzaky.github.io/Template-Three/
 
 
 [Big Thanks to Elzero Web School](https://elzero.org/)
