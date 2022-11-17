@@ -4,6 +4,7 @@
   --main-color-alt: #1787e0;
   --main-transition: 0.3s;
   --section-padding: 100px;
+  --section-background: #ececec;
 }
 
 * {
@@ -332,10 +333,6 @@ header .mega-menu ul.links li a i {
   background-color: #ececec;
   z-index: -1;
   transform: skewY(-6deg);
-  -webkit-transform: skewY(-6deg);
-  -moz-transform: skewY(-6deg);
-  -ms-transform: skewY(-6deg);
-  -o-transform: skewY(-6deg);
   transform-origin: top left;
 }
 
@@ -417,12 +414,9 @@ header .mega-menu ul.links li a i {
   animation: bouncing 1.5s infinite;
   -webkit-animation: bouncing 1.5s infinite;
   -webkit-text-stroke-width: 1.5px;
-  /* font-size: 20px; */
 }
-
 /* End Landing */
 /* Start Articles */
-
 .articles {
   padding: var(--section-padding) 0;
 }
@@ -486,8 +480,209 @@ header .mega-menu ul.links li a i {
 .articles .card:hover a.info::before {
   animation: moving-arrow 0.5s linear infinite;
 }
-
 /* End Articles */
+
+/* Start Gallery */
+.gallery {
+  background-color: var(--section-background);
+  padding: var(--section-padding) 0;
+}
+
+.gallery .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.gallery .image {
+  border: 20px solid white;
+  overflow: hidden;
+  box-shadow: 0px 12px 20px 0px rgb(0 0 0 / 13%),
+    0px 2px 4px 0px rgb(0 0 0 / 12%);
+  position: relative;
+}
+
+.gallery .image::before {
+  content: "";
+  width: 0;
+  height: 0;
+  background-color: rgb(255 255 255 / 20%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 2;
+}
+
+.gallery .image:hover::before {
+  animation: flashing 0.7s;
+}
+
+.gallery .image img {
+  max-width: 100%;
+  transition: var(--main-transition);
+}
+
+.gallery .image:hover img {
+  transform: rotate(5deg) scale(1.1);
+  /* transform-origin: center center; */
+}
+/* End Gallery */
+/* Start Features */
+.features {
+  padding: var(--section-padding) 0;
+  background-color: white;
+}
+
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.features .card {
+  border: 1px solid #ccc;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.features .card .image {
+  position: relative;
+  overflow: hidden;
+}
+
+.features .card .image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.features .card .image::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-width: 0 0 170px 650px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+  transition: var(--main-transition);
+}
+
+.features .card:hover .image::after {
+  border-width: 0 650px 170px 0;
+}
+
+.features .card .image img {
+  max-width: 100%;
+}
+
+.features .card h2 {
+  font-size: 40px;
+  width: fit-content;
+  margin: auto;
+  position: relative;
+}
+
+.features .card h2::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 15px;
+  height: 5px;
+  width: calc(100% - 30px);
+}
+
+.features .card P {
+  margin: 30px 0;
+  line-height: 2;
+  color: #777;
+  font-size: 20px;
+  padding: 25px;
+}
+
+.features .card a {
+  display: block;
+  border: 3px solid transparent;
+  border-radius: 6px;
+  width: fit-content;
+  padding: 10px 30px;
+  font-size: 22px;
+  font-weight: bold;
+  margin: auto;
+  transition: var(--main-transition);
+
+}
+
+.features .card:nth-child(1) .image::before {
+  background-color: rgb(244, 64, 54, 0.6);
+}
+
+.features .card:nth-child(1) h2::after {
+  background-color: #f44036;
+}
+
+.features .card:nth-child(1) a {
+  color: #f44036;
+  border-color: #f44036;
+  background: linear-gradient(to right, #f44036 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+.features .card:nth-child(2) .image::before {
+  background-color: rgba(0, 150, 136, 0.6);
+}
+
+.features .card:nth-child(2) h2::after {
+  background-color: #009688;
+}
+
+.features .card:nth-child(2) a {
+  color: #009688;
+  border-color: #009688;
+}
+
+.features .card:nth-child(2) a {
+  color: #009688;
+  border-color: #009688;
+  background: linear-gradient(to right, #009688 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+.features .card:nth-child(3) .image::before {
+  background-color: rgba(3, 169, 244, 0.6);
+}
+
+.features .card:nth-child(3) h2::after {
+  background-color: #03a9f4;
+}
+
+.features .card:nth-child(3) a {
+  color: #03a9f4;
+  border-color: #03a9f4;
+}
+
+.features .card:nth-child(3) a {
+  color: #03a9f4;
+  border-color: #03a9f4;
+  background: linear-gradient(to right, #03a9f4 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+
+.features .card:hover a {
+  background-position: left bottom;
+  color: white;
+}
+
+
+/* End Features */
+
 /* Start Animation */
 @keyframes up-and-down {
   0%,
@@ -549,4 +744,24 @@ header .mega-menu ul.links li a i {
     right: 10px;
   }
 }
+
+@keyframes flashing {
+  0%,
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 200%;
+    height: 200%;
+  }
+}
 /* End Animation */
+
+/**
+* *  Important Info is Highlighted
+* ! Deprecated Method, Do not use
+* ? Should this Method be Exposed in the puplic API?
+* TODO: refactor this method so that it conforms to the API
+* 
+*/
